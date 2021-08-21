@@ -10,8 +10,44 @@ import {SidebarContext} from "../../../contexts/SidebarContext";
 import styles from './Navbar.module.css';
 import SysFrequenciaIcon from "../../../assets/images/SysFrequenciaIcon.png";
 
+
 const Navbar = () => {
     const context = React.useContext(SidebarContext);
+
+    const outrosSistemas = [
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+        {
+            name: 'SysOutro',
+            image: SysFrequenciaIcon
+        },
+    ]
 
     return (
         <Nav className='navbar navbar-dark bg-frequencia-primary' id="wrapper">
@@ -35,22 +71,30 @@ const Navbar = () => {
             <ul className="navbar-nav d-flex flex-row  ms-auto">
                 <li className="nav-item">
                     <NavDropdown title={<FaTh size="25" title="Outros Sistemas" />} className={styles.navDropdown} id="outrosSistemas">
-                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+                        {outrosSistemas.map((sistema, i) => {
+                            return (
+                                <NavDropdown.Item title={sistema.name} key={i} className="d-flex align-items-center">
+                                    <img src={sistema.image} width="30" style={{filter: 'invert(100%)'}}  alt={sistema.name} />
+                                </NavDropdown.Item>
+                            );
+                        })}
                     </NavDropdown>
                 </li>
                 <li className="nav-item">
-                    <NavDropdown title={<FaRegBell size="25" title="Notificações" />} className={styles.navDropdown} id="outrosSistemas">
+                    <NavDropdown title={<FaRegBell size="25" title="Notificações" />} className={styles.navDropdown} id="notificacoes">
                         <NavDropdown.Item href="#action3">Fulano de Tal</NavDropdown.Item>
                         <NavDropdown.Item href="#action4">20176446551255</NavDropdown.Item>
                     </NavDropdown>
                 </li>
                 <li className="nav-item">
-                    <NavDropdown title={<FaUser size="25" title="Informações da Conta" />} className={styles.navDropdown} id="outrosSistemas">
-                        <NavDropdown.Item href="#action3">Fulano de Tal</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">20176446551255</NavDropdown.Item>
+                    <NavDropdown title={<FaUser size="25" title="Informações da Conta" />} className={styles.navDropdown} id="conta">
+                        <h5>
+                            Seja Bem Vindo, 201720849118 <br />
+                            <small className="text-muted">
+                                Administrador <br />
+                                Servidor
+                            </small>
+                        </h5>
                     </NavDropdown>
                 </li>
             </ul>

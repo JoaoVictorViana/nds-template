@@ -3348,6 +3348,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var Navbar = function Navbar() {
   var context = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_contexts_SidebarContext__WEBPACK_IMPORTED_MODULE_1__.SidebarContext);
+  var outrosSistemas = [{
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }, {
+    name: 'SysOutro',
+    image: _assets_images_SysFrequenciaIcon_png__WEBPACK_IMPORTED_MODULE_3__.default
+  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
     className: "navbar navbar-dark bg-frequencia-primary",
     id: "wrapper",
@@ -3390,23 +3415,27 @@ var Navbar = function Navbar() {
       className: "navbar-nav d-flex flex-row  ms-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
         className: "nav-item",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
           title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaTh, {
             size: "25",
             title: "Outros Sistemas"
           }),
           className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_2__.default.navDropdown,
           id: "outrosSistemas",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
-            href: "#action3",
-            children: "Action"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
-            href: "#action4",
-            children: "Another action"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Divider, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
-            href: "#action5",
-            children: "Something else here"
-          })]
+          children: outrosSistemas.map(function (sistema, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
+              title: sistema.name,
+              className: "d-flex align-items-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                src: sistema.image,
+                width: "30",
+                style: {
+                  filter: 'invert(100%)'
+                },
+                alt: sistema.name
+              })
+            }, i);
+          })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
         className: "nav-item",
@@ -3416,7 +3445,7 @@ var Navbar = function Navbar() {
             title: "Notifica\xE7\xF5es"
           }),
           className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_2__.default.navDropdown,
-          id: "outrosSistemas",
+          id: "notificacoes",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
             href: "#action3",
             children: "Fulano de Tal"
@@ -3427,20 +3456,19 @@ var Navbar = function Navbar() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
         className: "nav-item",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
           title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaUser, {
             size: "25",
             title: "Informa\xE7\xF5es da Conta"
           }),
           className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_2__.default.navDropdown,
-          id: "outrosSistemas",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
-            href: "#action3",
-            children: "Fulano de Tal"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__.default.Item, {
-            href: "#action4",
-            children: "20176446551255"
-          })]
+          id: "conta",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h5", {
+            children: ["Seja Bem Vindo, 201720849118 ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("small", {
+              className: "text-muted",
+              children: ["Administrador ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), "Servidor"]
+            })]
+          })
         })
       })]
     })]
@@ -4638,7 +4666,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._6h6zXiTk5DXH2ohX4C2xr a::after {\n    content: none;\n}\n\n._6h6zXiTk5DXH2ohX4C2xr {\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n._6h6zXiTk5DXH2ohX4C2xr div {\n    transform: translate(-145px, 45px) !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._6h6zXiTk5DXH2ohX4C2xr a::after {\n    content: none;\n}\n\n._6h6zXiTk5DXH2ohX4C2xr {\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n._6h6zXiTk5DXH2ohX4C2xr div[aria-labelledby=\"outrosSistemas\"]{\n    /*transform: translate(-145px, 45px) !important;*/\n    display: grid !important;\n    grid-template-columns: repeat(3, 1fr);\n    grid-auto-rows: 50px;\n    padding-right: 8px !important;\n    padding-left: 8px !important;\n}\n\n._6h6zXiTk5DXH2ohX4C2xr div[aria-labelledby=\"conta\"] {\n\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"navDropdown": "_6h6zXiTk5DXH2ohX4C2xr"
@@ -4665,7 +4693,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._3jw3eYSKcL7TVJoLwICSck {\n    position: absolute;\n    z-index: 999;\n}\n\n._3jw3eYSKcL7TVJoLwICSck ul li a div span,\n._3jw3eYSKcL7TVJoLwICSck ul li a div svg:last-child {\n    display: none !important;\n}\n\n._3jw3eYSKcL7TVJoLwICSck:hover ul li a div span,\n._3jw3eYSKcL7TVJoLwICSck:hover ul li a div svg:last-child {\n    display: block !important;\n}\n\n._3jw3eYSKcL7TVJoLwICSck:hover {\n    width: 230px;\n}\n\n._2v8hFQ8KeczqguxfYhXLPq {\n    padding-top: 15px;\n}\n\n._3o3838DMM-f4lSgaf0Y6Us {\n    position: relative !important;\n    padding-left: 72px !important;\n}\n\n._1rbdNf--s9KOqURsQHZfa6.XEQJ7op2eLKJx6Q7mHEX4 {\n    display: none !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._3jw3eYSKcL7TVJoLwICSck {\r\n    position: absolute;\r\n    z-index: 999;\r\n}\r\n\r\n._3jw3eYSKcL7TVJoLwICSck ul li a div span,\r\n._3jw3eYSKcL7TVJoLwICSck ul li a div svg:last-child {\r\n    display: none !important;\r\n}\r\n\r\n._3jw3eYSKcL7TVJoLwICSck:hover ul li a div span,\r\n._3jw3eYSKcL7TVJoLwICSck:hover ul li a div svg:last-child {\r\n    display: block !important;\r\n}\r\n\r\n._3jw3eYSKcL7TVJoLwICSck:hover {\r\n    width: 230px;\r\n}\r\n\r\n._2v8hFQ8KeczqguxfYhXLPq {\r\n    padding-top: 15px;\r\n}\r\n\r\n._3o3838DMM-f4lSgaf0Y6Us {\r\n    position: relative !important;\r\n    padding-left: 72px !important;\r\n}\r\n\r\n._1rbdNf--s9KOqURsQHZfa6.XEQJ7op2eLKJx6Q7mHEX4 {\r\n    display: none !important;\r\n}\r\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"collapsed": "_3jw3eYSKcL7TVJoLwICSck",
@@ -4696,7 +4724,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._3DQpiBGFN195yVBzOQI_Qe {\n    min-height: 134px;\n}\n._3DQpiBGFN195yVBzOQI_Qe:hover {\n    background-color: #DEDEDE !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._3DQpiBGFN195yVBzOQI_Qe {\r\n    min-height: 134px;\r\n}\r\n._3DQpiBGFN195yVBzOQI_Qe:hover {\r\n    background-color: #DEDEDE !important;\r\n}\r\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"cardItem": "_3DQpiBGFN195yVBzOQI_Qe"
