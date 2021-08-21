@@ -1,0 +1,6 @@
+.cardItem {
+    min-height: 134px;
+}
+.cardItem:hover {
+    background-color: #DEDEDE !important;
+}

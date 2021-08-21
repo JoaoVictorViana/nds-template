@@ -1,0 +1,12 @@
+.navDropdown a::after {
+    content: none;
+}
+
+.navDropdown {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.navDropdown div {
+    transform: translate(-145px, 45px) !important;
+}

@@ -13,6 +13,6 @@
     <body>
         <div id="root"></div>
 
-        <script src="{{ asset('core/index.js') }}"></script>
+        <script src="{{ asset('index.js') }}"></script>
     </body>
 </html>
