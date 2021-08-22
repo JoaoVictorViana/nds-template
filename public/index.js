@@ -3379,6 +3379,19 @@ var Navbar = function Navbar() {
     name: 'SysOutro',
     image: _assets_images_SysFrequencia_png__WEBPACK_IMPORTED_MODULE_4__.default
   }];
+  var novidades = [{
+    title: 'Descontinuação do SysFrequência Desktop',
+    content: 'O núcleo de desenvolvimento de software informa que o SysFrequência desktop será desligado definitivamente em 01/03/2019. Após isso apenas este será usado.',
+    date: '09:40 05/12/2018'
+  }, {
+    title: 'Descontinuação do SysFrequência Desktop',
+    content: 'O núcleo de desenvolvimento de software informa que o SysFrequência desktop será desligado definitivamente em 01/03/2019. Após isso apenas este será usado.',
+    date: '09:40 05/12/2018'
+  }, {
+    title: 'Descontinuação do SysFrequência Desktop',
+    content: 'O núcleo de desenvolvimento de software informa que o SysFrequência desktop será desligado definitivamente em 01/03/2019. Após isso apenas este será usado.',
+    date: '09:40 05/12/2018'
+  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
     className: "navbar navbar-dark bg-frequencia-primary",
     id: "wrapper",
@@ -3426,6 +3439,7 @@ var Navbar = function Navbar() {
             size: "25",
             title: "Outros Sistemas"
           }),
+          drop: "down",
           align: "end",
           className: "nav-dropdown nav-dropdown-sistemas",
           id: "outrosSistemas",
@@ -3443,20 +3457,53 @@ var Navbar = function Navbar() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
         className: "nav-item",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
           title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_8__.FaRegBell, {
             size: "25",
-            title: "Notifica\xE7\xF5es"
+            title: "Novidades"
           }),
+          drop: "down",
+          align: "end",
           className: "nav-dropdown",
-          id: "notificacoes",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Item, {
-            href: "#action3",
-            children: "Fulano de Tal"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__.default.Item, {
-            href: "#action4",
-            children: "20176446551255"
-          })]
+          id: "novidades",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "row px-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: "col-12 mt-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+                children: "Novidades"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {
+                className: "mt-0 mb-0 pt-0 pb-0"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "col-12 pt-0 mt-1",
+              children: novidades.map(function (novidade, i) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                  className: "list-group p-0",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
+                    href: "#",
+                    className: "list-group-item list-group-item-action p-1 mb-1 border-0",
+                    "aria-current": "true",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                      className: "d-flex flex-column w-100 mb-1",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
+                        className: "mb-1",
+                        children: novidade.title
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("small", {
+                        className: "text-muted mb-2",
+                        children: novidade.date
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("small", {
+                      className: "mb-1",
+                      children: novidade.content.length <= 70 ? novidade.content : novidade.content.substr(0, 70) + ' ...'
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {
+                    className: "mt-0"
+                  })]
+                }, i);
+              })
+            })]
+          })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
         className: "nav-item",
@@ -3466,6 +3513,7 @@ var Navbar = function Navbar() {
             src: _assets_images_useravatar_jpg__WEBPACK_IMPORTED_MODULE_5__.default,
             roundedCircle: true
           }),
+          drop: "down",
           align: "end",
           className: "nav-dropdown",
           id: "conta",
@@ -4714,7 +4762,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".nav-dropdown a::after {\n    content: none;\n}\n\n.nav-dropdown {\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.nav-dropdown div.dropdown-menu.show {\n    padding-right: 8px !important;\n    padding-left: 8px !important;\n}\n\n.nav-dropdown-sistemas div.show[aria-labelledby=\"outrosSistemas\"]{\n    display: grid !important;\n    grid-template-columns: repeat(3, 1fr);\n    grid-auto-rows: 50px;\n}\n\n.nav-dropdown div.show[aria-labelledby=\"conta\"] {\n    min-width: 240px;\n    /*display: grid !important;\n    grid-template-columns: repeat(2, 1fr);\n    grid-auto-rows: 50px;*/\n}\n\n.nav-dropdown div.show[aria-labelledby=\"conta\"] div.d-grid {\n    /*height: 100%;*/\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".nav-dropdown a::after {\n    content: none;\n}\n\n.nav-dropdown {\n    padding-left: 8px;\n    padding-right: 8px;\n}\n\n.nav-dropdown div.dropdown-menu.show {\n    padding-right: 8px !important;\n    padding-left: 8px !important;\n}\n\n.nav-dropdown-sistemas div.show[aria-labelledby=\"outrosSistemas\"]{\n    display: grid !important;\n    grid-template-columns: repeat(3, 1fr);\n    grid-auto-rows: 50px;\n}\n\n.nav-dropdown div.show[aria-labelledby=\"conta\"] {\n    min-width: 240px;\n}\n.nav-dropdown div.show[aria-labelledby=\"novidades\"] {\n    min-width: 350px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
