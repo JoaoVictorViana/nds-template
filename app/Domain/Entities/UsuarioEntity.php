@@ -8,21 +8,28 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class UsuarioEntity
 {
+    private $id;
     private $nome;
     private $email;
     private $identificacao;
     private $permissao;
 
-    private function __construct(string $nome, string $email, string $identificacao)
+    private function __construct(int $id, string $nome, string $email, string $identificacao)
     {
+        $this->id = $id;
         $this->nome = $nome;
         $this->email = $email;
         $this->identificacao = $identificacao;
     }
 
-    public static function create(string $nome, string $email, string $identificacao): self
+    public static function create(int $id, string $nome, string $email, string $identificacao): self
     {
-        return new UsuarioEntity($nome, $email, $identificacao);
+        return new UsuarioEntity($id, $nome, $email, $identificacao);
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
     }
 
     public function getNome(): string
@@ -54,16 +61,17 @@ class UsuarioEntity
     public function toArray(): array
     {
         return [
+            "id" => $this->getId(),
             "nome" => $this->getNome(),
             "email" => $this->getEmail(),
-            "identificaco" => $this->getIdentificacao(),
+            "identificacao" => $this->getIdentificacao(),
             "permissao" => $this->getPermissao()
         ];
     }
 
     public static function fromArray(array $data): self
     {
-        return UsuarioEntity::create($data['nome'], $data['email'], $data['identificacao'])
+        return UsuarioEntity::create($data['id'], $data['nome'], $data['email'], $data['identificacao'])
             ->setPermissao(Arr::get($data, 'permissao'));
     }
 
