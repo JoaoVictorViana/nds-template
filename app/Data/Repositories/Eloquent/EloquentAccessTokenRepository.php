@@ -19,4 +19,14 @@ class EloquentAccessTokenRepository extends EloquentRepository implements Access
 
         return $tokenModel;
     }
+
+    public function update(string $token, array $attributes): void
+    {
+        $tokenModel = $this->model->findOrFail($token);
+
+        if ($tokenModel) {
+            $tokenModel->fill($attributes);
+            $tokenModel->save();
+        }
+    }
 }
