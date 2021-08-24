@@ -36,9 +36,8 @@ class BancoCentralApi implements BancoCentral
             throw new ModelNotFoundException;
         }
 
-        return $this->mapToEntity($response);
+        return $this->mapToEntity($response, true);
     }
-
 
     public function loadUsuarioByCredentials(string $identifier, string $password): UsuarioEntity
     {
@@ -73,9 +72,14 @@ class BancoCentralApi implements BancoCentral
         return env('BANCO_CENTRAL_API_BASE_URI').'/data/'.env('BANCO_CENTRAL_API_PASSWORD').'/'.$resource.'/'.$field;
     }
 
-    private function mapToEntity(array $data): UsuarioEntity
+    private function mapToEntity(array $data, bool $needCollapse = false): UsuarioEntity
     {
-        $result = isset($data['resultados']) ? Arr::collapse($data['resultados']) : $data['resultado'];
+        $result = isset($data['resultados'])
+            ? ($needCollapse
+                ? Arr::collapse($data['resultados'])
+                : $data['resultados'])
+            : $data['resultado'];
+
         $permissions = array_key_exists('permissoes', $data)
             ? $data['permissoes']
             : $result['permissoes'];
