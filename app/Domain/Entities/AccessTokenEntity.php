@@ -6,14 +6,11 @@ use DateTimeInterface;
 
 class AccessTokenEntity
 {
-    public static $expirationAt;
-
     private $token;
 
     private function __construct(string $token)
     {
         $this->token = $token;
-        $this->expirationAt = now()->endOfDay();
     }
 
     public static function create(string $token): self
@@ -28,8 +25,7 @@ class AccessTokenEntity
 
     public static function getAccessTokenExpirationAt(): DateTimeInterface
     {
-        static::$expirationAt = now()->endOfDay();
-        return static::$expirationAt;
+        return now()->endOfDay();
     }
 
     public static function fromArray(array $data): self

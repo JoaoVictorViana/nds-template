@@ -2,11 +2,11 @@
 
 namespace App\Domain\Interfaces\Cryptography;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Domain\Entities\UsuarioEntity;
 
 interface Cryptography
 {
-    public function encrypt(Authenticatable $user): string;
+    public function encrypt(UsuarioEntity $user): string;
 
     public function decrypt(string $ciphertext): string;
 }

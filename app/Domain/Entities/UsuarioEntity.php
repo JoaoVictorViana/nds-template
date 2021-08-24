@@ -2,39 +2,42 @@
 
 namespace App\Domain\Entities;
 
+use App\Data\Models\Usuario;
 use Illuminate\Support\Arr;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class UsuarioEntity
 {
     private $nome;
     private $email;
+    private $identificacao;
     private $permissao;
 
-    public static function create(): self
+    private function __construct(string $nome, string $email, string $identificacao)
     {
-        return new UsuarioEntity();
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->identificacao = $identificacao;
     }
 
-    public function setNome(?string $value): self
+    public static function create(string $nome, string $email, string $identificacao): self
     {
-        $this->nome = $value;
-        return $this;
+        return new UsuarioEntity($nome, $email, $identificacao);
     }
 
-    public function getNome(): ?string
+    public function getNome(): string
     {
         return $this->nome;
     }
 
-    public function setEmail(?string $value): self
-    {
-        $this->email = $value;
-        return $this;
-    }
-
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
+    }
+
+    public function getIdentificacao(): string
+    {
+        return $this->identificacao;
     }
 
     public function setPermissao(?string $value): self
@@ -48,11 +51,26 @@ class UsuarioEntity
         return $this->permissao;
     }
 
+    public function toArray(): array
+    {
+        return [
+            "nome" => $this->getNome(),
+            "email" => $this->getEmail(),
+            "identificaco" => $this->getIdentificacao(),
+            "permissao" => $this->getPermissao()
+        ];
+    }
+
     public static function fromArray(array $data): self
     {
-        return UsuarioEntity::create()
-            ->setNome(Arr::get($data, 'nome'))
-            ->setEmail(Arr::get($data, 'email'))
+        return UsuarioEntity::create($data['nome'], $data['email'], $data['identificacao'])
             ->setPermissao(Arr::get($data, 'permissao'));
+    }
+
+    public function toModel(): Authenticatable
+    {
+        $userModel = app(Usuario::class);
+        $userModel->fill($this->toArray());
+        return $userModel;
     }
 }

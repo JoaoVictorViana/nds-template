@@ -2,14 +2,15 @@
 
 namespace App\Data\Cryptography;
 
+use App\Domain\Entities\UsuarioEntity;
 use App\Domain\Interfaces\Cryptography\Cryptography;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class JwtCryptography implements Cryptography
 {
-    public function encrypt(Authenticatable $user): string
+    public function encrypt(UsuarioEntity $user): string
     {
-        return $user->createToken($user->identificacao)->accessToken;
+        $userModel = $user->toModel();
+        return $userModel->createToken($user->getIdentificacao())->accessToken;
     }
 
     public function decrypt(string $ciphertext): string
