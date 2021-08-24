@@ -2,8 +2,10 @@
 
 namespace App\Providers\Binds;
 
+use App\Data\Cryptography\JwtCryptography;
 use App\Data\Http\GuzzleHttpClient;
 use App\Data\Interfaces\HttpClient;
+use App\Domain\Interfaces\Cryptography\Cryptography;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\ServiceProvider;
@@ -26,5 +28,6 @@ class DataServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(HttpClient::class, GuzzleHttpClient::class);
+        $this->app->bind(Cryptography::class, JwtCryptography::class);
     }
 }
