@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Data\Models\Authentication\Client;
 use App\Data\Models\Authentication\AccessToken;
 use App\Data\Models\Authentication\PersonalAccessClient;
+use App\Data\Providers\UsuarioBancoCentralProvider;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\Passport;
