@@ -84,8 +84,9 @@ class BancoCentralApi implements BancoCentral
         $systemPermission = Arr::first($filteredPermissions);
 
         $mappedData = [
-            "nome" => Arr::get($result, 'nome'),
-            "email" => Arr::get($result, 'email'),
+            "nome" => ucwords($result['nome']),
+            "email" => $result['email'],
+            "identificacao" => $result['identificacao'],
             "permissao" => Arr::get($systemPermission, 'permissaoSlug'),
         ];
 
