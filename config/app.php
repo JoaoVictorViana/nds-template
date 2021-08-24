@@ -179,7 +179,9 @@ return [
          * Bind Service Providers...
          */
 
-        App\Providers\Binds\DataServiceProvider::class
+        App\Providers\Binds\DataServiceProvider::class,
+        App\Providers\Binds\ApiServiceProvider::class,
+        App\Providers\Binds\ServiceServiceProvider::class
     ],
 
     /*

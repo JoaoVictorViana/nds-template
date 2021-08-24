@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+function buildRouteDirectory(string $resource): string
+{
+    return __DIR__."/api/$resource.php";
+}
+
+Route::group([
+    'prefix' => '/auth',
+    'as' => 'auth.',
+    'namespace' => 'Authentication',
+    // 'middleware' => 'auth',
+    ], buildRouteDirectory('authentication'));
