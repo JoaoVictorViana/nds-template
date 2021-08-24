@@ -48,15 +48,11 @@ class UsuarioEntity
         return $this->permissao;
     }
 
-    public static function fromApi(array $data): self
+    public static function fromArray(array $data): self
     {
-        $result = $data['resultados'];
-        $filteredPermissions = array_filter($data['permissoes'], fn ($permission) => $permission['nomeSistema'] === env('APP_NAME'));
-        $systemPermission = Arr::first($filteredPermissions);
-
         return UsuarioEntity::create()
-            ->setNome(Arr::get($result, 'nome'))
-            ->setEmail(Arr::get($result, 'email'))
-            ->setPermissao(Arr::get($systemPermission, 'permissaoSlug'));
+            ->setNome(Arr::get($data, 'nome'))
+            ->setEmail(Arr::get($data, 'email'))
+            ->setPermissao(Arr::get($data, 'permissao'));
     }
 }
