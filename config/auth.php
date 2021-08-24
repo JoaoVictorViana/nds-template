@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -36,14 +35,15 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
 
         'api' => [
             'driver' => 'passport',
-            'provider' => 'users',
+            'provider' => 'banco-central',
+            'model' => App\Data\Models\Usuario::class,
         ],
     ],
 
@@ -65,14 +65,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'banco-central' => [
             'driver' => 'banco-central',
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -111,5 +106,4 @@ return [
     */
 
     'password_timeout' => 10800,
-
 ];
