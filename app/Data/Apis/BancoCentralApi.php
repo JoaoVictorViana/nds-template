@@ -28,6 +28,18 @@ class BancoCentralApi implements BancoCentral
         return $this->mapToEntity($response);
     }
 
+    public function loadUsuarioByIdentifier(string $identifier): UsuarioEntity
+    {
+        $response = $this->httpClient->request($this->generateUriForAll('pessoa', $identifier));
+
+        if (empty($response['resultados'])) {
+            throw new ModelNotFoundException;
+        }
+
+        return $this->mapToEntity($response);
+    }
+
+
     public function loadUsuarioByCredentials(string $identifier, string $password): UsuarioEntity
     {
         $response = $this->httpClient->request($this->generateUriForAuth($identifier, $password));
@@ -56,11 +68,19 @@ class BancoCentralApi implements BancoCentral
         return env('BANCO_CENTRAL_API_BASE_URI').'/login/'.$identifier.'/'.$password;
     }
 
+    protected function generateUriForAll(string $resource, string $field = ''): string
+    {
+        return env('BANCO_CENTRAL_API_BASE_URI').'/data/'.env('BANCO_CENTRAL_API_PASSWORD').'/'.$resource.'/'.$field;
+    }
+
     private function mapToEntity(array $data): UsuarioEntity
     {
-        $result = isset($data['resultados']) ? $data['resultados'] : $data['resultado'];
+        $result = isset($data['resultados']) ? Arr::collapse($data['resultados']) : $data['resultado'];
+        $permissions = array_key_exists('permissoes', $data)
+            ? $data['permissoes']
+            : $result['permissoes'];
 
-        $filteredPermissions = array_filter($data['permissoes'], fn ($permission) => $permission['nomeSistema'] === env('APP_NAME'));
+        $filteredPermissions = array_filter($permissions, fn ($permission) => $permission['nomeSistema'] === env('APP_NAME'));
         $systemPermission = Arr::first($filteredPermissions);
 
         $mappedData = [
