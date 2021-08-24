@@ -17,7 +17,7 @@ final class UsuarioBancoCentralProvider implements UserProvider
 
     public function retrieveById($identifier)
     {
-        return $this->bancoCentral->loadUsuario($identifier);
+        return $this->bancoCentral->loadUsuario($identifier)->toModel();
     }
 
     public function retrieveByToken($identifier, $token)
@@ -32,7 +32,7 @@ final class UsuarioBancoCentralProvider implements UserProvider
 
     public function retrieveByCredentials(array $credentials)
     {
-        return $this->bancoCentral->loadUsuarioByCredentials($credentials['identificacao'], $credentials['password']);
+        return $this->bancoCentral->loadUsuarioByCredentials($credentials['identificacao'], $credentials['password'])->toModel();
     }
 
     public function validateCredentials(Authenticatable $user, array $credentials)
