@@ -181,7 +181,8 @@ return [
 
         App\Providers\Binds\DataServiceProvider::class,
         App\Providers\Binds\ApiServiceProvider::class,
-        App\Providers\Binds\ServiceServiceProvider::class
+        App\Providers\Binds\ServiceServiceProvider::class,
+        App\Providers\Binds\RepositoryServiceProvider::class
     ],
 
     /*

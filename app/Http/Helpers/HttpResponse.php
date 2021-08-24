@@ -12,6 +12,11 @@ class HttpResponse
         return response()->json($data, 200);
     }
 
+    public static function noContent(): JsonResponse
+    {
+        return response()->json([], 204);
+    }
+
     public static function badRequest(Exception $exception): JsonResponse
     {
         return response()->json([
