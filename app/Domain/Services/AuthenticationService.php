@@ -27,7 +27,7 @@ class AuthenticationService implements Authentication
             if ($this->bancoCentral->checkUsuarioByCredentials($authenticationEntity->getIdentificacao(), $authenticationEntity->getSenha())) {
                 $accessToken = $this->cryptography->encrypt($account);
 
-                return $accessToken;
+                return AccessTokenEntity::create($accessToken);
             }
         }
 
