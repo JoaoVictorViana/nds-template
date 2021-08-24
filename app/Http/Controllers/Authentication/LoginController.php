@@ -28,7 +28,7 @@ final class LoginController extends Controller
         $accessToken = $this->authentication->auth($authenticationEntity);
 
         return HttpResponse::ok([
-            'accessToken' => $accessToken,
+            'accessToken' => $accessToken->getToken(),
         ]);
     }
 }
