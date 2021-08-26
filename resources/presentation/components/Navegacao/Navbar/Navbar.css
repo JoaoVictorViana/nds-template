@@ -1,0 +1,26 @@
+.nav-dropdown a::after {
+    content: none;
+}
+
+.nav-dropdown {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.nav-dropdown div.dropdown-menu.show {
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+}
+
+.nav-dropdown-sistemas div.show[aria-labelledby="outrosSistemas"]{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 50px;
+}
+
+.nav-dropdown div.show[aria-labelledby="conta"] {
+    min-width: 240px;
+}
+.nav-dropdown div.show[aria-labelledby="novidades"] {
+    min-width: 350px;
+}

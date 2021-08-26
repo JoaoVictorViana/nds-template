@@ -1,0 +1,31 @@
+.collapsed {
+    position: absolute;
+    z-index: 999;
+}
+
+.collapsed ul li a div span,
+.collapsed ul li a div svg:last-child {
+    display: none !important;
+}
+
+.collapsed:hover ul li a div span,
+.collapsed:hover ul li a div svg:last-child {
+    display: block !important;
+}
+
+.collapsed:hover {
+    width: 230px;
+}
+
+.content {
+    padding-top: 15px;
+}
+
+.contentCollapsed {
+    position: relative !important;
+    padding-left: 72px !important;
+}
+
+.sidebar-menu.show {
+    display: none !important;
+}

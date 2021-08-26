@@ -1,0 +1,158 @@
+@import "~bootstrap/scss/bootstrap";
+
+$frequencia-primary-color: #043927;
+$frequencia-secondary-color: #075F3F;
+
+.border-frequencia-primary {
+    border-color: $frequencia-primary-color !important;
+}
+
+.border-frequencia-secondary {
+    border-color: $frequencia-secondary-color !important;
+}
+
+.frequencia-primary {
+    color: $frequencia-primary-color !important;
+}
+
+.frequencia-secondary {
+    color: $frequencia-secondary-color !important;
+}
+
+.bg-frequencia-primary {
+    background-color: $frequencia-primary-color !important;
+}
+
+.bg-frequencia-secondary {
+    background-color: $frequencia-secondary-color !important;
+}
+
+body {
+    max-height: 95vh;
+}
+
+#body-row {
+    margin-left:0;
+    margin-right:0;
+}
+#sidebar-container {
+    overflow: visible;
+    overflow-y: auto;
+    min-height: calc(100vh - 60px);
+    max-height: calc(100vh - 59px);
+    background-color: $frequencia-secondary-color;
+    padding: 0;
+}
+
+#body-row div.col#content {
+    min-height: calc(100vh - 60px);
+    max-height: calc(100vh - 59px);
+    overflow: visible;
+    overflow-y: auto;
+}
+
+#body-row div.col::-webkit-scrollbar {
+    width: 12px;
+}
+
+#body-row div.col::-webkit-scrollbar-track {
+    background: white;
+}
+
+#body-row div.col::-webkit-scrollbar-thumb {
+    background-color: $frequencia-secondary-color;
+    border-radius: 3px;
+}
+
+#sidebar-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar-container::-webkit-scrollbar-track {
+    background: $frequencia-secondary-color;
+}
+
+#sidebar-container::-webkit-scrollbar-thumb {
+    background-color: $frequencia-primary-color;
+    border-radius: 20px;
+}
+
+#sidebar-container ul a div span {
+    margin-left: 1rem;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+    width: 230px;
+    transition: width .5s;
+}
+.sidebar-collapsed {
+    width: 60px;
+    transition: width .5s;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+    height: 50px;
+    color: white;
+}
+
+#sidebar-container .list-group .list-group-item {
+    background-color: $frequencia-secondary-color !important;
+}
+
+#sidebar-container .list-group .list-group-item:hover {
+    background-color: $frequencia-primary-color !important;
+}
+
+#sidebar-container .list-group .list-group-item.active {
+    border-color: $frequencia-primary-color;
+    background-color: $frequencia-primary-color !important;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
+}
+.sidebar-submenu {
+    font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+    background-color: $frequencia-primary-color;
+    height: 35px;
+}
+.sidebar-separator {
+    background-color: $frequencia-primary-color;
+    height: 25px;
+}
+.logo-separator {
+    background-color: $frequencia-primary-color;
+    height: 60px;
+}
+
+li.teste-na {
+    min-height: 50px;
+    transition: display 5s;
+}
+
+#sidebar-container .list-group .list-group-item div span {
+    margin-left: 25px;
+    display: inherit;
+    transition: display 5s;
+}
+
+#sidebar-container .list-group .list-group-item div svg {
+    width: 1.285em;
+}
+
+#wrapper {
+    justify-content: left;
+}
+
+#wrapper ul.navbar-nav {
+    padding-left: 16px;
+    padding-right: 22px;
+}
